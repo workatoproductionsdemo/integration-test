@@ -1,0 +1,14 @@
+name: Test workflow
+
+on:
+  workflow_dispatch:        # manual "Run workflow" button / API trigger
+  push:
+    branches: [main]        # runs on every push to main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Say hello
+        run: echo "Hello from a test run"
